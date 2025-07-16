@@ -40,7 +40,7 @@ class Content extends React.Component {
         
       </div>
       <div className="h-auto mb-36">
-        <h1 className="text-sky-900 uppercase font-bold text-4xl ml-20">
+        <h1 className="text-sky-900 uppercase font-bold text-4xl ml-24">
           faq
         </h1>
         <FAQ/>

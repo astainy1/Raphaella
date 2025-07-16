@@ -36,7 +36,7 @@ class Banner extends React.Component{
 
 				 <div className="bg-black py-0 px-6  flex  flex-wrap items-center justify-evenly">
         
-        <img className="h-auto px-5 m-1" src={image} alt="Logo" />
+        <img className="h-auto px-5 m-1 cursor-pointer" src={image} alt="Logo" />
 
         
         <ul className="flex justify-center items-center flex flex-wrap md:justify-center items-center md:flex md: flex-wrap md:border-none">

@@ -1,6 +1,6 @@
 import React from 'react';
 import $ from 'jquery'
-import NavBar from './nav'
+// import NavBar from './nav'
 import Banner from './banner'
 import Section from './section'
 import Content from './content'
@@ -15,7 +15,7 @@ class App  extends React.Component{
     return(
 
       <>
-      <NavBar/>
+      {/*<NavBar/>*/}
       <Banner/>
       <Section/>
       <Content/>

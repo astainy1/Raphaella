@@ -14,13 +14,13 @@ class Gallery extends React.Component{
 			<div className = "bg-white h-auto mb-32 mt-24">
 			<div className="flex flex-wrap justify-center gap-0">
 			<div>
-				<img src={img1}/>
+				<img className="cursor-pointer md:hover:scale-110" src={img1}/>
 			</div>
 			<div>
-				<img src={img2}/>
+				<img className="cursor-pointer md:hover:scale-110" src={img2}/>
 			</div>
 			<div>
-				<img src={img3}/>
+				<img className="cursor-pointer md:hover:scale-110" src={img3}/>
 			</div>
 			</div>
 			<h2 className="text-sky-900 font-bold font-sans text-4xl text-center capitalize pt-24">
@@ -31,7 +31,7 @@ class Gallery extends React.Component{
 			</p>
 
 			<div className="flex flex-wrap justify-center">
-				<button className="bg-sky-900 text-white uppercase font-sans font-normal py-4 px-8 ">join us</button>
+				<button className="bg-sky-900 text-white uppercase font-sans font-normal py-4 px-8 cursor-pointer hover:underline">join us</button>
 			</div>	
 		</div>
 			</>

@@ -38,7 +38,7 @@ class FAQ extends React.Component{
 
 			<>
 				
-      <div id="accordion-color" data-accordion="collapse" className="m-14" data-active-classes="bg-white text-sky-900">
+      <div id="accordion-color" data-accordion="collapse" className="m-5" data-active-classes="bg-white text-sky-900">
 
   <h2 id="accordion-color-heading-1">
     <button
@@ -72,7 +72,6 @@ class FAQ extends React.Component{
       <p className="mb-2 font-sans font-normal text-lg">
         Autism Spectrum Disorder (ASD) is a complex neurodevelopmental condition that affects how an individual thinks, communicates, interacts socially, and experiences the world.<br/>
         <span id="readmore"> It is called a spectrum disorder because symptoms and abilities can vary greatly from person to person.</span>
-        <br />
         <br />
         <button className="hover:underline cursor-pointer" id="read">readmore</button>
       </p>

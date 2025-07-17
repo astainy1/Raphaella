@@ -35,12 +35,13 @@ class Content extends React.Component {
           </div>
         </div>
         <div className="w-full md:w-1/2 flex justify-center m-14">
-          <img src={img} alt="RLF Program" className="max-w-full h-auto cursor-pointer" />
+          <img src={img} alt="RLF Program" className="m-auto md:max-w-full md:h-auto cursor-pointer" />
+
         </div>
         
       </div>
       <div className="h-auto mb-36">
-        <h1 className="text-sky-900 uppercase font-bold text-4xl ml-24">
+        <h1 className="text-sky-900 uppercase font-bold text-4xl md:ml-14 m-14">
           faq
         </h1>
         <FAQ/>

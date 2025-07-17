@@ -6,6 +6,8 @@ import Section from './section'
 import Content from './content'
 import SectionContent from './content-section'
 import Gallery from './gallery'
+import Footer from './footer'
+import CopyRight from './copyright'
 import './App.css'
 
 class App  extends React.Component{
@@ -21,6 +23,8 @@ class App  extends React.Component{
       <Content/>
       <SectionContent/>
       <Gallery/>
+      <Footer/>
+      <CopyRight/>
       </>
 
       )

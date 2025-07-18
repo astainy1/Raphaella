@@ -10,7 +10,7 @@ class Section extends React.Component{
 
     $("#paragraph").hide();
 
-    $('#learnmore').click(function() {
+    $('button#learnmore').click(function() {
 
     $("#paragraph").toggle();
 

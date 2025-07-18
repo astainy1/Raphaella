@@ -69,8 +69,10 @@ class Footer extends React.Component {
               
             </div>
             <div>
-              <FontAwesomeIcon icon={faWhatsapp} className="text-white w-auto text-3xl"/>
-
+              <a href="https://whatsapp.com/channel/0029VbBDbP82kNFlGTRLl81X">
+                <FontAwesomeIcon icon={faWhatsapp} className="text-white w-auto text-3xl"/>
+              </a>
+              
             </div>
             <div>
               <FontAwesomeIcon icon={faWhatsapp} className="text-white w-auto text-3xl"/>

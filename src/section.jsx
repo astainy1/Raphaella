@@ -1,7 +1,21 @@
 import React from 'react';
 import img from './img/RLF-6-1.webp'
+import $ from 'jquery'
 
 class Section extends React.Component{
+
+  componentDidMount(){
+
+    $(document).ready(function(){
+
+      $('#learnmore').click(function(){
+
+      $("#paragraph").toogle();
+
+      });
+
+    });
+  }
 
 	render(){
 
@@ -18,11 +32,11 @@ class Section extends React.Component{
     <p className="font-bold text-xl mb-5 ml-5">
       The Raphaella Lewis Foundation, Autism Awareness Foundation, was created in honor of Raphaella Lewis, a courageous and inspiring young girl diagnosed with autism.
     </p>
-    <p className="text-xl font-normal font-sans mb-5 ml-5 pt-8">
+    <p className="text-xl font-normal font-sans mb-5 ml-5 pt-8" id="paragraph">
       RLF is an Autism Awareness Foundation. RLF is committed to raising awareness, breaking stigmas, and empowering individuals with autism and their families, particularly within the Liberian community in the USA, Liberia, West Africa, and across Africa.
     </p>
     <div className=" mt-20 md:mt-32">
-    	<button className="bg-white text-sky-900 uppercase text-md py-3 px-3 font-normal font-sans ml-5 cursor-pointer hover:underline">
+    	<button className="bg-white text-sky-900 uppercase text-md py-3 px-3 font-normal font-sans ml-5 cursor-pointer hover:underline" id="learnmore">
       learn more
     </button>
   </div>

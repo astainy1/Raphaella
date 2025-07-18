@@ -6,6 +6,8 @@ import {faMobileAlt} from '@fortawesome/free-solid-svg-icons'
 import {faWhatsapp} from '@fortawesome/free-brands-svg-icons'
 import {faFacebook} from '@fortawesome/free-brands-svg-icons'
 import {faInstagram} from '@fortawesome/free-brands-svg-icons'
+import {faTiktok} from '@fortawesome/free-brands-svg-icons'
+
 
 
 class Footer extends React.Component {

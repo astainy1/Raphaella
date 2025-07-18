@@ -22,13 +22,13 @@ class Footer extends React.Component {
 
             <ul className="list-none text-white pt-3 font-sans font-normal uppercase">
               <li className="p-2">
-                about
+                <a href="#">about</a>
               </li>
               <li className="p-2">
-                services
+                <a href="#">services</a>
               </li>
               <li className="p-2">
-              faq
+              <a href="#">faq</a>
               </li>
             </ul>
           </div>
@@ -43,11 +43,15 @@ class Footer extends React.Component {
                 :<span className="uppercase text-sm"> p o box 28332</span> minneapolis 55428
               </li>
               <li className="p-2">
-                <FontAwesomeIcon icon={faEnvelope} className="text-white text-sm mr-2"/> : info@raphaellalewisfoundation.org
+                <FontAwesomeIcon icon={faEnvelope} className="text-white text-sm mr-2"/> : <a href="mailto:info@raphaellalewisfoundation.org">
+                      info@raphaellalewisfoundation.org
+                      </a>
+
               </li>
               <li className="p-2">
                 <FontAwesomeIcon icon={faMobileAlt} className="text-white mr-2"/>
-                : +1612-440-6495
+                :<a href="tel:+16124406495">+1 612-440-6495</a>
+
               </li>
             </ul>
           </div>

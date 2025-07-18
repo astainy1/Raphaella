@@ -17,7 +17,7 @@ class CopyRight extends React.Component{
 				</div>
 				<div className="ml-8 mt-2 md:mr-8 md:mt-2 text-white capitalize">
 						
-						<a href="#">robust technology liberia
+						<a href="https://web.facebook.com/share/p/1Ag8HtJBXy/">robust technology liberia
 						</a>
 				</div>
 			</div>

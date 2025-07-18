@@ -6,8 +6,7 @@ import {faMobileAlt} from '@fortawesome/free-solid-svg-icons'
 import {faWhatsapp} from '@fortawesome/free-brands-svg-icons'
 import {faFacebook} from '@fortawesome/free-brands-svg-icons'
 import {faInstagram} from '@fortawesome/free-brands-svg-icons'
-import {faTiktok} from '@fortawesome/free-brands-svg-icons'
-
+import { faTiktok } from '@fortawesome/free-brands-svg-icons'
 
 
 class Footer extends React.Component {
@@ -67,25 +66,32 @@ class Footer extends React.Component {
                 </div>
               </form>
             </div>
+            {/* Facebook */}
             <div className="flex flex-wrap justify-evenly gap-5">
             <div>
               <a href="https://www.facebook.com/share/1F7uYhVoHN/?mibextid=wwXIfr">
                 <FontAwesomeIcon icon={faFacebook} className="text-white text-3xl w-auto"/>
               </a>
             </div>
+            {/* WhatsAPP */}
             <div>
               <a href="https://whatsapp.com/channel/0029VbBDbP82kNFlGTRLl81X">
                 <FontAwesomeIcon icon={faWhatsapp} className="text-white w-auto text-3xl"/>
               </a>
               
             </div>
+            {/* Instagram */}
             <div>
-              <FontAwesomeIcon icon={faInstagram} className="text-white w-auto text-3xl"/>
+              
+              <a href="https://www.instagram.com/raphaellalewisfoundation?igsh=MWc4MjV6OTZxMDF2eg%3D%3D&utm_source=qr">
+                <FontAwesomeIcon icon={faInstagram} className="text-white w-auto text-3xl"/>
+
+              </a>
 
             </div>
             {/* Tiktok */}
             <div>
-              <a href="#">
+              <a href="www.tiktok.com/@raphaellalewisfoundation">
                 <FontAwesomeIcon icon={faTiktok} className="text-white w-auto text-3xl"/>
               </a>
             </div>

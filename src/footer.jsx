@@ -5,6 +5,8 @@ import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import {faMobileAlt} from '@fortawesome/free-solid-svg-icons'
 import {faWhatsapp} from '@fortawesome/free-brands-svg-icons'
 import {faFacebook} from '@fortawesome/free-brands-svg-icons'
+import {faInstagram} from '@fortawesome/free-brands-svg-icons'
+
 
 class Footer extends React.Component {
   render() {
@@ -65,8 +67,9 @@ class Footer extends React.Component {
             </div>
             <div className="flex flex-wrap justify-evenly gap-5">
             <div>
-              <FontAwesomeIcon icon={faFacebook} className="text-white text-3xl w-auto"/>
-              
+              <a href="https://www.facebook.com/share/1F7uYhVoHN/?mibextid=wwXIfr">
+                <FontAwesomeIcon icon={faFacebook} className="text-white text-3xl w-auto"/>
+              </a>
             </div>
             <div>
               <a href="https://whatsapp.com/channel/0029VbBDbP82kNFlGTRLl81X">
@@ -75,7 +78,7 @@ class Footer extends React.Component {
               
             </div>
             <div>
-              <FontAwesomeIcon icon={faWhatsapp} className="text-white w-auto text-3xl"/>
+              <FontAwesomeIcon icon={faInstagram} className="text-white w-auto text-3xl"/>
 
             </div>
 

@@ -35,19 +35,22 @@ class Banner extends React.Component{
 			{/* Nav bar */}
 
 				 <div className="bg-black py-0 px-6  flex  flex-wrap items-center justify-evenly">
-        
+        {/* LOGO */}
         <img className="h-auto px-5 m-1 cursor-pointer" src={image} alt="Logo" />
 
-        
+        {/* Navigation links */}
         <ul className="flex justify-center items-center flex flex-wrap md:justify-center items-center md:flex md: flex-wrap md:border-none">
           <li className="px-5">
-            <a className="text-white text-lg font-sans" href="#">About Us</a>
+            <a className="text-white text-lg font-sans hover:text-sky-900" href="#">About Us</a>
           </li>
           <li className="px-5">
-            <a className="text-white font-sans text-lg" href="#">Services</a>
+            <a className="text-white font-sans text-lg hover:text-sky-900" href="#">Services</a>
           </li>
           <li className="px-5">
-            <a className="text-white text-lg" href="#">Contact</a>
+            <a className="text-white text-lg hover:text-sky-900" href="#">Contact</a>
+          </li>
+           <li className="px-5 uppercase md:visible">
+            <a className="text-white text-lg hover:text-sky-900" href="#">faq</a>
           </li>
           <li className="px-5">
             <button className="px-3 py-3 bg-sky-900 text-white font-sans font-normal capitalize cursor-pointer hover:underline md:flex md:justify-start" id="donate">

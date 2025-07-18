@@ -16,8 +16,8 @@ class Content extends React.Component {
     return (
       <>
       <div
-        className="bg-white mb-12 flex bg-scroll flex-col md:flex-row gap-6 p-6 items-center"
-        id="container"
+        className="bg-gray-100 mb-12 flex bg-scroll flex-col md:flex-row gap-6 p-6 items-center"
+        id="services"
       >
         <div className="w-full m-5 md:w-1/2 md:m-12">
           <h1 className="text-5xl font-bold capitalize mb-6 text-center text-sky-900">
@@ -29,7 +29,7 @@ class Content extends React.Component {
             and community outreach to break stigma and ensure autistic children thrive.
           </p>
           <div className="mt-12 flex justify-center">
-            <button className="bg-sky-800 text-white py-3 px-8 cursor-pointer hover:underline">
+            <button className="uppercase bg-sky-800 text-white py-3 px-8 cursor-pointer hover:underline">
               our services
             </button>
           </div>

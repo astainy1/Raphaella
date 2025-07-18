@@ -14,7 +14,7 @@ class NavBar extends React.Component {
             <a className="text-white text-lg font-sans" href="#">About Us</a>
           </li>
           <li className="px-5">
-            <a className="text-white font-sans text-lg" href="#">Services</a>
+            <a className="text-white font-sans text-lg" href="#services">Services</a>
           </li>
           <li className="px-5">
             <a className="text-white text-lg" href="#">Contact</a>

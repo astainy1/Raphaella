@@ -6,6 +6,8 @@ class Section extends React.Component{
 
   componentDidMount(){
 
+    $("#paragraph").hide();
+
     $(document).ready(function(){
 
       $('#learnmore').click(function(){

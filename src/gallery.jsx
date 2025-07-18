@@ -31,7 +31,7 @@ class Gallery extends React.Component{
 			</p>
 
 			<div className="flex flex-wrap justify-center">
-				<button className="bg-sky-900 text-white uppercase font-sans font-normal py-4 px-8 cursor-pointer hover:underline">join us</button>
+				<a href="https://whatsapp.com/channel/0029VbBDbP82kNFlGTRLl81X" className="bg-sky-900 text-white uppercase font-sans font-normal py-4 px-8 cursor-pointer hover:underline">join us</a>
 			</div>	
 		</div>
 			</>

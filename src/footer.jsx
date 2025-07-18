@@ -81,7 +81,12 @@ class Footer extends React.Component {
               <FontAwesomeIcon icon={faInstagram} className="text-white w-auto text-3xl"/>
 
             </div>
-
+            {/* Tiktok */}
+            <div>
+              <a href="#">
+                <FontAwesomeIcon icon={faTiktok} className="text-white w-auto text-3xl"/>
+              </a>
+            </div>
             </div>
           </div>
          </div> 

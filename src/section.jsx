@@ -6,17 +6,18 @@ class Section extends React.Component{
 
   componentDidMount(){
 
+    $(document).ready(function() {
+
     $("#paragraph").hide();
 
-    $(document).ready(function(){
+    $('#learnmore').click(function() {
 
-      $('#learnmore').click(function(){
+    $("#paragraph").toggle();
 
-      $("#paragraph").toogle();
+  });
 
-      });
+});
 
-    });
   }
 
 	render(){

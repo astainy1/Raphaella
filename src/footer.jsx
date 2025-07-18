@@ -15,22 +15,38 @@ class Footer extends React.Component {
       <>
         <div className="bg-sky-900  md:h-96 pb-14 flex flex-wrap justify-evenly gap-5">
           {/* contact us */}
-          <div className="w-52  ml-2 md:w-48 mt-10 md:mt-9">
+          <div className="w-64  ml-2 md:w-52 mt-10 md:mt-9">
             <h1 className="text-white font-bold font-sans text-2xl md:text-2xl capitalize">
               resource
             </h1>
 
-            <ul className="list-none text-white pt-3 font-sans font-normal uppercase">
+            <ul className="list-none text-white pt-3 font-sans font-normal capitalize">
               <li className="p-2">
-                <a href="#">about</a>
+                <a href="#">
+                  what is autism?
+                </a>
               </li>
               <li className="p-2">
-                <a href="#">services</a>
+                <a href="#">
+                  understanding your child
+                </a>
               </li>
               <li className="p-2">
-              <a href="#">faq</a>
+              <a href="#">
+                it's okay to ask for help
+              </a>
               </li>
-            </ul>
+              <li className="p-2">
+              <a href="#">
+                how can i help?
+              </a>
+              </li>
+              <li className="p-2">
+              <a href="#">
+                how can i education someone about autism?
+              </a>
+              </li>
+              </ul>
           </div>
           <div className="w-52 mt-8 mr-5">
           <h1 className="text-white font-bold font-sans text-2xl md:text-2xl capitalize">

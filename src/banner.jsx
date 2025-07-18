@@ -6,9 +6,7 @@ import { faCreditCard } from '@fortawesome/free-solid-svg-icons';
 import $ from 'jquery';
 
 class Banner extends React.Component {
-
   componentDidMount() {
-
     $('#donateform').hide();
 
     $(document).ready(function () {
@@ -16,7 +14,6 @@ class Banner extends React.Component {
       $('#donate').click(function () {
 
         $('#donateform').show();
-        
       });
 
       $('#close').click(function () {
@@ -24,7 +21,6 @@ class Banner extends React.Component {
         $('#donateform').fadeOut(3000);
 
       });
-
     });
   }
 
@@ -36,13 +32,16 @@ class Banner extends React.Component {
 
           <ul className="flex justify-center items-center flex-wrap md:border-none">
             <li className="px-5">
-              <a className="text-white text-lg font-sans hover:text-sky-900" href="#">About Us</a>
+              <a className="text-white text-lg font-sans hover:text-sky-900 capitalize" href="#">about us</a>
             </li>
             <li className="px-5">
-              <a className="text-white font-sans text-lg hover:text-sky-900" href="#">Services</a>
+              <a className="text-white font-sans text-lg hover:text-sky-900 capitalize" href="#">services</a>
+            </li>
+             <li className="px-5">
+              <a className="text-white font-sans text-lg hover:text-sky-900 capitalize" href="#">core values</a>
             </li>
             <li className="px-5">
-              <a className="text-white text-lg hover:text-sky-900" href="#">Contact</a>
+              <a className="text-white text-lg hover:text-sky-900 capitalize" href="#">contact</a>
             </li>
             <li className="px-5 uppercase md:visible">
               <a className="text-white text-lg hover:text-sky-900" href="#">FAQ</a>

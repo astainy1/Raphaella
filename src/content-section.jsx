@@ -3,10 +3,10 @@ import React from 'react';
 class SectionContent extends React.Component {
   render() {
     return (
-      <div className="bg-sky-900 py-10">
+      <div className="h-auto md:h-80 bg-sky-900 py-10">
         <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          <div className="text-white p-4">
+          <div className="text-white p-4 text-lg">
             <h1 className="text-lg sm:text-xl font-bold capitalize font-sans mb-2">
               Providing Essential Supplies
             </h1>

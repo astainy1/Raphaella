@@ -23,6 +23,7 @@ class App extends React.Component {
                 <Section />
                 <Content />
                 <SectionContent />
+                <Gallery/>
               </>
             }
           />

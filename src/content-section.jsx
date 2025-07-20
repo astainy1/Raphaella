@@ -4,41 +4,41 @@ class SectionContent extends React.Component {
   render() {
     return (
       <div className="bg-sky-900 py-10">
-        <div className="max-w-5xl mx-auto  justify-center px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 h-auto md:h-72 pt-5">
+        <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          <div className="bg-transparent text-white p-4">
-            <h1 className="text-xl font-bold capitalize font-sans mb-4">
-              Providing Essential <br /> Supplies
+          <div className="text-white p-4">
+            <h1 className="text-lg sm:text-xl font-bold capitalize font-sans mb-2">
+              Providing Essential Supplies
             </h1>
-            <p className="capitalize font-sans">
+            <p className="text-sm sm:text-base font-sans capitalize">
               Collecting and distributing clothes, toys, books, and school materials.
             </p>
           </div>
 
-          <div className="bg-transparent text-white p-4">
-            <h1 className="text-xl font-bold capitalize font-sans mb-4">
+          <div className="text-white p-4">
+            <h1 className="text-lg sm:text-xl font-bold capitalize font-sans mb-2">
               Community Outreach Programs
             </h1>
-            <p className="capitalize font-sans">
+            <p className="text-sm sm:text-base font-sans capitalize">
               Raising awareness to eliminate stigma.
             </p>
           </div>
 
-          <div className="bg-transparent text-white p-4">
-            <h1 className="text-xl font-bold capitalize font-sans mb-4">
-              Parent & Caregiver <br /> Training
+          <div className="text-white p-4">
+            <h1 className="text-lg sm:text-xl font-bold capitalize font-sans mb-2">
+              Parent & Caregiver Training
             </h1>
-            <p className="capitalize font-sans">
+            <p className="text-sm sm:text-base font-sans capitalize">
               Helping families understand autism and provide the best care.
             </p>
           </div>
 
-          <div className="bg-transparent text-white p-4">
-            <h1 className="text-xl font-bold capitalize font-sans mb-4">
-              Fighting for <br /> Autism Inclusion
+          <div className="text-white p-4">
+            <h1 className="text-lg sm:text-xl font-bold capitalize font-sans mb-2">
+              Fighting for Autism Inclusion
             </h1>
-            <p className="capitalize font-sans">
-              Advocating for autism-friendly policies in liberia and beyond.
+            <p className="text-sm sm:text-base font-sans capitalize">
+              Advocating for autism-friendly policies in Liberia and beyond.
             </p>
           </div>
 
@@ -48,4 +48,4 @@ class SectionContent extends React.Component {
   }
 }
 
-export default SectionContent
+export default SectionContent;

@@ -1,6 +1,6 @@
 import React from 'react';
-import img from './img/RLF-6-1.webp'
-import $ from 'jquery'
+import img from './img/RLF-6-1.webp';
+import $ from 'jquery';
 
 class Section extends React.Component{
 

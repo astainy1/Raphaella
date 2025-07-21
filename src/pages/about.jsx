@@ -1,5 +1,4 @@
 import React from 'react'
-import Banner from '../banner'
 import img1 from '../img/RLF-3.webp'
 import img2 from '../img/RLF-2.webp'
 import img3 from '../img/Untitled-design-76.webp'

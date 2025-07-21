@@ -24,15 +24,15 @@ class Banner extends React.Component {
       <>
         {/* NavBar*/}
         <nav className="bg-black border-none dark:bg-black">
-          <div className="max-w-screen-md flex flex-wrap items-center justify-evenly mx-auto p-2">
-            <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+          <div className="max-w-screen-md flex flex-wrap items-center justify-between mx-auto p-2">
+            <Link to="/home" className="flex items-center space-x-3 rtl:space-x-reverse">
               <img src={image} className="h-auto" alt="Raphaella Logo" />
             </Link>
 
             {/* Donate Button*/}
-            <div className="flex md:order-2 space-x-2 md:space-x-4 items-center">
+            <div className="flex md:order-2 space-x-2 md:space-x-3 items-center">
               <button
-                className="text-white bg-sky-900 font-sans font-normal px-4 py-3 text-lg cursor-pointer dark:bg-sky-900 hover:underline mr-5"
+                className="text-white bg-sky-900 font-sans font-normal px-4 py-3 text-lg cursor-pointer dark:bg-sky-900 hover:underline mr-2"
                 id="donate"
               >
                 Donate
@@ -58,18 +58,21 @@ class Banner extends React.Component {
             </div>
             {/*Menu*/}
             <div className="hidden w-full md:flex md:w-auto md:order-1" id="navbar-menu">
-              <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border-none bg-black md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-black">
+              <ul className="flex flex-col font-medium capitalize p-4 md:p-0 mt-4 border-none bg-black md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-black">
                 <li>
-                  <Link to="/" className="block py-2 px-3 text-white hover:text-sky-900">Home</Link>
+                  <Link to="/home" className="block py-2 px-2 text-white hover:text-sky-900">home</Link>
                 </li>
                 <li>
-                  <Link to="/about" className="block py-2 px-3 text-white hover:text-sky-900">About</Link>
+                  <Link to="/about" className="block py-2 px-2 text-white hover:text-sky-900">about</Link>
                 </li>
                 <li>
-                  <Link to="/services" className="block py-2 px-3 text-white hover:text-sky-900">Services</Link>
+                  <Link to="/services" className="block py-2 px-2 text-white hover:text-sky-900">services</Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="block py-2 px-3 text-white hover:text-sky-900">Contact</Link>
+                  <Link to="/cores" className="block py-2 px-2 text-white hover:text-sky-900">core values</Link>
+                </li>
+                <li>
+                  <Link to="/contact" className="block py-2 px-2 text-white hover:text-sky-900">contact</Link>
                 </li>
               </ul>
             </div>
@@ -84,7 +87,7 @@ class Banner extends React.Component {
           <div className="py-3">
             <div className="flex flex-wrap justify-center mt-10 md:mt-32">
               <div className="bg-white w-96 h-96" id="donateform">
-                <form action="/" className="ml-5 pt-8" method="POST">
+                <form action="/home" className="ml-5 pt-8" method="POST">
                   <label className="capitalize text-sky-900 font-sans">Email:</label>
                   <br />
                   <input

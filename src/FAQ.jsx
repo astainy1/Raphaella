@@ -105,7 +105,7 @@ class FAQ extends React.Component {
                 </span>
                 <br />
                 <button className="hover:underline cursor-pointer" id="read">
-                  readmore
+                  read more
                 </button>
               </p>
             </div>

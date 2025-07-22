@@ -15,6 +15,9 @@ class CopyRight extends React.Component{
 							raphaella lewis foundation
 						</span>
 				</div>
+				<div className="text-white mt-2 ml-8">
+					<span className="capitalize">raphaella lewis foundation | <span>501(c)(3) Organzation, EIN 33-2579521.</span></span>
+				</div>
 				<div className="ml-8 mt-2 md:mr-8 md:mt-2 text-white capitalize">
 						
 						<a href="https://web.facebook.com/share/p/1Ag8HtJBXy/">robust technology liberia

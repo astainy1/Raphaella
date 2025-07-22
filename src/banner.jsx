@@ -17,6 +17,10 @@ class Banner extends React.Component {
     $('#close').click(() => {
       $('#donateform').fadeOut(3000);
     });
+
+    $('[data-collapse-toggle="navbar-menu"]').click(() => {
+      $('#navbar-menu').toggleClass('hidden');
+    });
   }
 
   render() {
@@ -40,7 +44,7 @@ class Banner extends React.Component {
               <button
                 data-collapse-toggle="navbar-menu"
                 type="button"
-                className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white  md:hidden "
+                className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white md:hidden"
                 aria-controls="navbar-menu"
                 aria-expanded="false"
               >
@@ -56,8 +60,9 @@ class Banner extends React.Component {
                 </svg>
               </button>
             </div>
+
             {/*Menu*/}
-            <div className="hidden w-full md:flex md:w-auto md:order-1" id="navbar-menu">
+            <div className="hidden transition-all duration-300 ease-in-out w-full md:flex md:w-auto md:order-1" id="navbar-menu">
               <ul className="flex flex-col font-medium capitalize p-4 md:p-0 mt-4 border-none bg-black md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-black">
                 <li>
                   <Link to="/home" className="block py-2 px-2 text-white hover:text-sky-900">home</Link>
@@ -80,10 +85,7 @@ class Banner extends React.Component {
         </nav>
 
         {/*Donation Form*/}
-        <div
-          className="bg-no-repeat bg-cover h-96 md:min-h-screen md:bg-center w-screen"
-          id="hero-image"
-        >
+        <div className="bg-no-repeat bg-cover h-96 md:min-h-screen md:bg-center w-screen" id="hero-image">
           <div className="py-3">
             <div className="flex flex-wrap justify-center mt-10 md:mt-32">
               <div className="bg-white w-96 h-96" id="donateform">
@@ -140,4 +142,4 @@ class Banner extends React.Component {
   }
 }
 
-export default Banner;
+export default Banner

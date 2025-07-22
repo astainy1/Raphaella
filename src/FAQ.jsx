@@ -59,7 +59,7 @@ class FAQ extends React.Component {
         <div
           id="accordion-color"
           data-accordion="collapse"
-          className="m-5"
+          className="m-2 md:m-5"
           data-active-classes="bg-white text-sky-900"
         >
           <h2 id="accordion-color-heading-1">
@@ -70,7 +70,7 @@ class FAQ extends React.Component {
               aria-expanded="false"
               aria-controls="accordion-color-body-1"
             >
-              <span className="text-sky-900 text-2xl capitalize font-sans font-normal m-5">
+              <span className="text-sky-900 text-2xl capitalize font-sans font-normal m-2 md:m-5">
                 what is autism?
               </span>
               <svg
@@ -93,7 +93,7 @@ class FAQ extends React.Component {
           </h2>
           <div
             id="accordion-color-body-1"
-            className="accordion-body hidden m-5"
+            className="accordion-body hidden m-2 md:m-5"
             aria-labelledby="accordion-color-heading-1"
           >
             <div className="p-5 border border-b-0 border-none bg-white text-sky-900">
@@ -119,7 +119,7 @@ class FAQ extends React.Component {
               aria-expanded="false"
               aria-controls="accordion-color-body-2"
             >
-              <span className="text-sky-900 text-2xl capitalize font-sans font-normal m-5">
+              <span className="text-sky-900 text-2xl capitalize font-sans font-normal m-2 md:m-5">
                 what causes autism?
               </span>
               <svg
@@ -160,7 +160,7 @@ class FAQ extends React.Component {
               aria-expanded="false"
               aria-controls="accordion-color-body-3"
             >
-              <span className="text-sky-900 text-2xl capitalize font-sans font-normal m-5">
+              <span className="text-sky-900 text-2xl capitalize font-sans font-normal m-2 md:m-5">
                 misconceptions
               </span>
               <svg
@@ -183,7 +183,7 @@ class FAQ extends React.Component {
           </h2>
           <div
             id="accordion-color-body-3"
-            className="accordion-body hidden m-5"
+            className="accordion-body hidden m-2 md:m-5"
             aria-labelledby="accordion-color-heading-3"
           >
             <div className="p-5 border border-b-0 border-none bg-white text-sky-900">

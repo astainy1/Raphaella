@@ -1,5 +1,5 @@
 import React from 'react'
-
+import TeamMembers from './team'
 
 class CoreValues extends React.Component{
 
@@ -9,10 +9,10 @@ class CoreValues extends React.Component{
 		return(
 
 			<>
-				<div className="md:h-96 md:mb-96 mb-20 bg-white md:mt-32">
+				<div className="md:h-auto  mb-20 bg-white mt-20 md:mt-16">
 
-				{/*<h1 className="font-bold font-sans capitalize text-4xl text-center mt-12 text-sky-900">our core value</h1>*/}
-				{/*core values*/}
+				<h1 className="font-bold font-sans capitalize text-4xl text-center mt-16 text-sky-900">our core values</h1>
+				
 				<div className="flex flex-wrap justify-center gap-5 md:gap-0 mt-9">
 
 					<div className="w-80 bg-sky-900 h-96 text-white">
@@ -48,12 +48,8 @@ class CoreValues extends React.Component{
 						</p>
 					</div>
 				</div>*/}
-				<div className="bg-white mt-24">
-					<h1 className="text-center text-sky-900 capitalize text-4xl font-bold font-sans">
-						meet our team
-					</h1>
+				<TeamMembers/>
 				</div>
-			</div>
 				
 			</>
 

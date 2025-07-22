@@ -11,16 +11,16 @@ class Gallery extends React.Component{
 
 			<>
 			
-			<div className = "bg-white h-auto mt-2 mb-32 md:mt-24">
+			<div className = "bg-white h-auto mt-1 mb-32 md:mt-24">
 			<div className="flex flex-wrap justify-center gap-0">
 			<div>
-				<img className="cursor-pointer md:hover:scale-110" src={img1}/>
+				<img className="mx-0 w-auto cursor-pointer md:hover:scale-110" src={img1}/>
 			</div>
 			<div>
-				<img className="cursor-pointer md:hover:scale-110" src={img2}/>
+				<img className="mx-0 w-auto cursor-pointer md:hover:scale-110" src={img2}/>
 			</div>
 			<div>
-				<img className="cursor-pointer md:hover:scale-110" src={img3}/>
+				<img className="mx-0 w-auto cursor-pointer md:hover:scale-110" src={img3}/>
 			</div>
 			</div>
 			<h2 className="text-sky-900 font-bold font-sans text-4xl text-center capitalize pt-24">

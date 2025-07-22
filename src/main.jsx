@@ -1,14 +1,55 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
-import App from './App';
-import './index.css';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+
+import Banner from './banner';
+import Section from './section';
+import Content from './content';
+import SectionContent from './content-section';
+import Gallery from './gallery';
+import Footer from './footer';
+import CopyRight from './copyright';
+import About from './pages/about';
+import CoreValues from './pages/core_values';
+
+import './App.css';
+
+class Home extends React.Component {
+  render() {
+    return (
+      <>
+        <Section />
+        <Content />
+        <SectionContent />
+        <Gallery />
+      </>
+    );
+  }
+}
+
+class Layout extends React.Component {
+  render() {
+    return (
+      <>
+        <Banner />
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" replace />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/cores" element={<CoreValues />} />
+        </Routes>
+        <Footer />
+        <CopyRight />
+      </>
+    );
+  }
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
+    <BrowserRouter basename="/Raphaella">
+      <Layout />
     </BrowserRouter>
   </React.StrictMode>
 );

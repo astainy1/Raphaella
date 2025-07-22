@@ -16,7 +16,7 @@ class Content extends React.Component {
     return (
       <>
       <div
-        className="bg-gray-100 mb-12 flex bg-scroll flex-col md:flex-row gap-6 p-6 items-center"
+        className="h-auto bg-gray-100 mb-12 flex bg-scroll flex-col md:flex-row gap-6 p-6 items-center"
         id="services"
       >
         <div className="w-full m-5 md:w-1/2 md:m-12">

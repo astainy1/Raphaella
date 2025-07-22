@@ -22,7 +22,7 @@ class TeamMembers extends React.Component{
 
 				<div class="w-72 bg-white border border-none">
     			<a href="#">
-       			 <img class="w-auto m-0" src={img1} alt="Jesayda Wright" />
+       			 <img class="md:hover:scale-105 w-auto m-0" src={img1} alt="Jesayda Wright" />
     				</a>
    			 <div class="p-5">
         		<a href="#">
@@ -38,7 +38,7 @@ class TeamMembers extends React.Component{
 
 				<div class="w-72 bg-white border border-none  dark:bg-white dark:border-gray-700">
     		<a href="#">
-        	<img class="w-auto m-0 cursor-pointer" src={img3} alt="Nathaniel B. Garpue" />
+        	<img class="md:hover:scale-105 w-auto m-0 cursor-pointer" src={img3} alt="Nathaniel B. Garpue" />
     		</a>
     		<div class="p-5">
         <a href="#">
@@ -52,7 +52,7 @@ class TeamMembers extends React.Component{
 						{/* img 3*/}
 <div class="w-72 bg-white border border-none  dark:bg-white dark:border-gray-700">
     <a href="#">
-        <img class="w-auto m-0" src={img2} alt="Shayla Harris" />
+        <img class="md:hover:scale-105 w-auto m-0" src={img2} alt="Shayla Harris" />
     </a>
     <div class="p-5">
         <a href="#">

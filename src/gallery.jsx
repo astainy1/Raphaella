@@ -11,7 +11,7 @@ class Gallery extends React.Component{
 
 			<>
 			
-			<div className = "bg-white h-auto mt-1 mb-32 md:mt-24">
+			<div className = "bg-white h-auto mt-0 m-0 mb-32 md:mt-24">
 			<div className="flex flex-wrap justify-center gap-0">
 			<div>
 				<img className="mx-0 w-auto cursor-pointer md:hover:scale-110" src={img1}/>

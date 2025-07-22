@@ -12,7 +12,6 @@ class CopyRight extends React.Component{
 				<div className="bg-sky-800 h-auto md:h-12 flex flex-wrap justify-between">
 					<div className="ml-8 mt-2 text-white">
 						copyright&#169; 2025 <span className="capitalize">
-							raphaella lewis foundation
 						</span>
 				</div>
 				<div className="text-white mt-2 ml-8">

@@ -1,24 +1,18 @@
 import React from 'react';
 import image from './img/Logo-102x85.png';
+import DonationForm from './donationForm';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPaypal } from '@fortawesome/free-brands-svg-icons';
-import { faCreditCard } from '@fortawesome/free-solid-svg-icons';
 import $ from 'jquery';
 
 class Banner extends React.Component {
   componentDidMount() {
     $('#donateform').hide();
 
-    $('#donate').click(() => {
+    $('#donate').on('click', function () {
       $('#donateform').show();
     });
 
-    $('#close').click(() => {
-      $('#donateform').fadeOut(3000);
-    });
-
-    $('[data-collapse-toggle="navbar-menu"]').click(() => {
+    $('[data-collapse-toggle="navbar-menu"]').on('click', function () {
       $('#navbar-menu').toggleClass('hidden');
     });
   }
@@ -26,14 +20,11 @@ class Banner extends React.Component {
   render() {
     return (
       <>
-        {/* NavBar*/}
         <nav className="bg-black border-none dark:bg-black">
           <div className="max-w-screen-md flex flex-wrap items-center justify-between mx-auto p-2">
             <Link to="/home" className="flex items-center space-x-3 rtl:space-x-reverse">
               <img src={image} className="h-auto" alt="Raphaella Logo" />
             </Link>
-
-            {/* Donate Button*/}
             <div className="flex md:order-2 space-x-2 md:space-x-3 items-center">
               <button
                 className="text-white bg-sky-900 font-sans font-normal px-4 py-3 text-lg cursor-pointer dark:bg-sky-900 hover:underline mr-2"
@@ -60,8 +51,6 @@ class Banner extends React.Component {
                 </svg>
               </button>
             </div>
-
-            {/*Menu*/}
             <div className="hidden transition-all duration-300 ease-in-out w-full md:flex md:w-auto md:order-1" id="navbar-menu">
               <ul className="flex flex-col font-medium capitalize p-4 md:p-0 mt-4 border-none bg-black md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-black">
                 <li>
@@ -83,56 +72,11 @@ class Banner extends React.Component {
             </div>
           </div>
         </nav>
-
-        {/*Donation Form*/}
         <div className="bg-no-repeat bg-cover h-96 md:min-h-screen md:bg-center w-screen" id="hero-image">
           <div className="py-3">
             <div className="flex flex-wrap justify-center mt-10 md:mt-32">
               <div className="bg-white w-96 h-96" id="donateform">
-                <form action="/home" className="ml-5 pt-8" method="POST">
-                  <label className="capitalize text-sky-900 font-sans">Email:</label>
-                  <br />
-                  <input
-                    className="border rounded border-sky-900 py-2 px-2 w-80"
-                    type="email"
-                  />
-                  <br />
-                  <br />
-                  <label className="capitalize text-sky-900 font-sans">Card Number:</label>
-                  <br />
-                  <input
-                    className="border rounded border-sky-900 py-2 px-2 w-80"
-                    type="text"
-                    placeholder="MM/YY CVC"
-                  />
-                  <br />
-                  <label className="capitalize text-sky-900 font-sans">Amount:</label>
-                  <br />
-                  <input
-                    className="border rounded border-sky-900 py-1 px-2 w-24"
-                    type="text"
-                  />
-                  <br />
-                  <div className="flex justify-center gap-8 mt-4">
-                    <FontAwesomeIcon
-                      icon={faPaypal}
-                      className="cursor-pointer text-sky-900 text-xl"
-                    />
-                    <FontAwesomeIcon
-                      icon={faCreditCard}
-                      className="cursor-pointer text-sky-900 text-xl"
-                    />
-                  </div>
-                  <div className="flex justify-center mt-4">
-                    <button
-                      type="submit"
-                      className="bg-sky-900 rounded text-white font-normal text-lg px-24 md:px-36 py-3"
-                      id="close"
-                    >
-                      Donate
-                    </button>
-                  </div>
-                </form>
+                <DonationForm/>
               </div>
             </div>
           </div>
@@ -142,4 +86,4 @@ class Banner extends React.Component {
   }
 }
 
-export default Banner
+export default Banner;

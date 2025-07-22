@@ -9,7 +9,7 @@ class Services extends React.Component{
 
 			<>
 			<div className="bg-white h-auto mb-32">
-				<h1 className="font-sans font-bold m-10 md:m-24 md:text-3xl capitalize text-sky-900">
+				<h1 className="text-3xl font-sans font-bold m-10 md:m-24 md:text-3xl capitalize text-sky-900">
 					Explore Autism Awareness Services - Together, we can break the stigma and build a brighter future for autistic children. Explore our services below to learn how we are making a difference!
 			</h1>
 			{/*service*/}
@@ -106,7 +106,7 @@ class Services extends React.Component{
 					</ul>
 				</div>
 				{/*third column*/}
-				<div className="w-72">
+				<div className="w-72 mt-5 md:mt-0">
 					<h1 className="text-3xl capitalize text-sky-900 font-bold font-sans">
 						inclusive education &#38; school support
 						<hr/>

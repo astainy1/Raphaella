@@ -16,7 +16,7 @@ class Footer extends React.Component {
         <div className="bg-sky-900  md:h-96 pb-14 flex flex-wrap justify-evenly gap-5">
           {/* contact us */}
           <div className="w-64  ml-2 md:w-52 mt-10 md:mt-9">
-            <h1 className="text-white font-bold font-sans text-2xl md:text-2xl capitalize">
+            <h1 className="ml-2 md:ml-2 text-white font-bold font-sans text-2xl md:text-2xl capitalize">
               resource
             </h1>
 
@@ -49,7 +49,7 @@ class Footer extends React.Component {
               </ul>
           </div>
           <div className="w-52 mt-8 mr-5">
-          <h1 className="text-white font-bold font-sans text-2xl md:text-2xl capitalize">
+          <h1 className=" ml-2 md:ml-2 text-white font-bold font-sans text-2xl md:text-2xl capitalize">
               contact us
             </h1>
             <div className="flex flex-wrap justify-evenly gap-5">

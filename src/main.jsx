@@ -10,8 +10,8 @@ import Gallery from './gallery';
 import Footer from './footer';
 import CopyRight from './copyright';
 import About from './pages/about';
+import Services from './pages/services';
 import CoreValues from './pages/core_values';
-
 import './App.css';
 
 class Home extends React.Component {
@@ -36,6 +36,7 @@ class Layout extends React.Component {
           <Route path="/" element={<Navigate to="/home" replace />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services/>}/>
           <Route path="/cores" element={<CoreValues />} />
         </Routes>
         <Footer />

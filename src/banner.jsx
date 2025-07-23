@@ -20,10 +20,10 @@ class Banner extends React.Component {
   render() {
     return (
       <>
-        <nav className="bg-black border-none dark:bg-black">
+        <nav className="bg-black bg-white md:dark:bg-black">
           <div className="max-w-screen-md flex flex-wrap items-center justify-between mx-auto p-2">
             <Link to="/home" className="flex items-center space-x-3 rtl:space-x-reverse">
-              <img src={image} className="h-auto" alt="Raphaella Logo" />
+              <img src={image} className="h-auto m-3" alt="Raphaella Logo" />
             </Link>
             <div className="flex md:order-2 space-x-2 md:space-x-3 items-center">
               <button
@@ -35,7 +35,7 @@ class Banner extends React.Component {
               <button
                 data-collapse-toggle="navbar-menu"
                 type="button"
-                className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white md:hidden"
+                className="inline-flex items-center p-2 w-10 h-10 justify-center  text-sky-900 md:text-lg md:text-white md:hidden"
                 aria-controls="navbar-menu"
                 aria-expanded="false"
               >
@@ -52,21 +52,21 @@ class Banner extends React.Component {
               </button>
             </div>
             <div className="hidden transition-all duration-300 ease-in-out w-full md:flex md:w-auto md:order-1" id="navbar-menu">
-              <ul className="flex flex-col font-medium capitalize p-4 md:p-0 mt-4 border-none bg-black md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-black">
+              <ul className="flex flex-col font-medium capitalize p-4 md:p-0 mt-4 border-none  bg-white md:bg-black md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-black">
                 <li>
-                  <Link to="/home" className="block py-2 px-2 text-white hover:text-sky-900">home</Link>
+                  <Link to="/home" className=" bg-sky-900 md:bg-black block md:py-2 md:px-2 md:text-white border-b-sky-900 md:border-none md:text-white md:hover:text-sky-900 hover:text-white text-white py-3 px-3">home</Link>
                 </li>
                 <li>
-                  <Link to="/about" className="block py-2 px-2 text-white hover:text-sky-900">about</Link>
+                  <Link to="/about" className="block md:border-none md:py-2 md:px-2 md:text-white md:hover:text-sky-900 text-sky-900 px-3 py-3 md:hover:bg-black hover:bg-sky-800 hover:text-white">about</Link>
                 </li>
                 <li>
-                  <Link to="/services" className="block py-2 px-2 text-white hover:text-sky-900">services</Link>
+                  <Link to="/services" className="block md:border-none md:py-2 md:px-2 md:text-white md:hover:text-sky-900 text-sky-900 px-3 py-3 hover:bg-sky-800 hover:text-white md:hover:bg-black">services</Link>
                 </li>
                 <li>
-                  <Link to="/cores" className="block py-2 px-2 text-white hover:text-sky-900">core values</Link>
+                  <Link to="/cores" className="block md:border-none md:py-2 md:px-2 md:text-white md:hover:text-sky-900 text-sky-900 px-3 py-3 hover:bg-sky-800 hover:text-white md:hover:bg-black">core values</Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="block py-2 px-2 text-white hover:text-sky-900">contact</Link>
+                  <Link to="/contact" className="block md:border-none md:py-2 md:px-2 md:text-white md:hover:text-sky-900 text-sky-900 px-3 py-3 hover:bg-sky-800 hover:text-white md:hover:bg-black">contact</Link>
                 </li>
               </ul>
             </div>

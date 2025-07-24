@@ -18,18 +18,18 @@ class DonationForm extends React.Component {
     return (
       <>
         <form action="/home" className="ml-5 pt-8" method="POST">
-          <label className="capitalize text-sky-900 font-sans">Email:</label>
+          <label className="capitalize text-sky-900 font-sans">account name:</label>
           <br />
           <input
-            className="border rounded border-sky-900 py-2 px-2 w-80"
-            type="email"
+            className="border rounded border-sky-900 py-2 px-2 w-80 capitalize text-gray-900"
+            type="text" placeholder="john brown"
           />
           <br />
           <br />
           <label className="capitalize text-sky-900 font-sans">Card Number:</label>
           <br />
           <input
-            className="border rounded border-sky-900 py-2 px-2 w-80"
+            className="border rounded border-sky-900 py-2 px-2 w-80 text-gray-900"
             type="text"
             placeholder="MM/YY CVC"
           />
@@ -37,7 +37,7 @@ class DonationForm extends React.Component {
           <label className="capitalize text-sky-900 font-sans">Amount:</label>
           <br />
           <input
-            className="border rounded border-sky-900 py-1 px-2 w-24"
+            className="border rounded border-sky-900 py-1 px-2 w-24 text-gray-900"
             type="text"
           />
           <br />

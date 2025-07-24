@@ -57,7 +57,7 @@ class Banner extends React.Component {
                   <Link to="/home" className=" bg-sky-900 md:bg-black block md:py-2 md:px-2 md:text-white border-b-sky-900 md:border-none md:text-white md:hover:text-sky-900 hover:text-white text-white py-3 px-3">home</Link>
                 </li>*/}
                 <li>
-                  <Link to="/about" className="block md:border-none md:py-2 md:px-2 md:text-white md:hover:text-sky-900 text-sky-900 px-3 py-3 md:hover:bg-black hover:bg-sky-800 hover:text-white">about</Link>
+                  <Link to="/about" className="block bg-sky-900 md:border-none md:py-2 md:px-2 md:text-white md:hover:text-sky-900 text-sky-900 px-3 py-3 md:hover:bg-black hover:bg-sky-800 hover:text-white">about</Link>
                 </li>
                 <li>
                   <Link to="/services" className="block md:border-none md:py-2 md:px-2 md:text-white md:hover:text-sky-900 text-sky-900 px-3 py-3 hover:bg-sky-800 hover:text-white md:hover:bg-black">services</Link>

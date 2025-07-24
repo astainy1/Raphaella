@@ -44,6 +44,7 @@ class Layout extends React.Component {
         <CopyRight />
       </>
     );
+    
   }
 }
 

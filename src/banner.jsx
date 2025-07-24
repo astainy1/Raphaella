@@ -21,13 +21,13 @@ class Banner extends React.Component {
     return (
       <>
         <nav className="bg-black bg-white md:dark:bg-black">
-          <div className="max-w-screen-md flex flex-wrap items-center justify-between mx-auto p-2">
+          <div className="max-w-screen-lg flex flex-wrap items-center justify-between mx-auto p-2">
             <Link to="/home" className="flex items-center space-x-3 rtl:space-x-reverse">
               <img src={image} className="h-auto m-3" alt="Raphaella Logo" />
             </Link>
             <div className="flex md:order-2 space-x-2 md:space-x-3 items-center">
               <button
-                className="text-white bg-sky-900 font-sans font-normal px-4 py-3 text-lg cursor-pointer dark:bg-sky-900 hover:underline mr-2"
+                className="text-white bg-sky-900 font-sans font-normal px-4 py-3 text-lg cursor-pointer dark:bg-sky-900 hover:underline"
                 id="donate"
               >
                 Donate
@@ -64,6 +64,9 @@ class Banner extends React.Component {
                 </li>
                 <li>
                   <Link to="/cores" className="block md:border-none md:py-2 md:px-2 md:text-white md:hover:text-sky-900 text-sky-900 px-3 py-3 hover:bg-sky-800 hover:text-white md:hover:bg-black">core values</Link>
+                </li>
+                 <li>
+                  <Link to="/involve" className="block md:border-none md:py-2 md:px-2 md:text-white md:hover:text-sky-900 text-sky-900 px-3 py-3 hover:bg-sky-800 hover:text-white md:hover:bg-black">get involve</Link>
                 </li>
                 <li>
                   <Link to="/contact" className="block md:border-none md:py-2 md:px-2 md:text-white md:hover:text-sky-900 text-sky-900 px-3 py-3 hover:bg-sky-800 hover:text-white md:hover:bg-black">contact</Link>

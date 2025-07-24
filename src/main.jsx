@@ -34,7 +34,7 @@ class Layout extends React.Component {
         <Banner />
         <Routes>
           <Route path="/" element={<Navigate to="/home" replace />} />
-          {/*<Route path="/home" element={<Home />} />*/}
+          <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services/>}/>
           <Route path="/cores" element={<CoreValues/>} />

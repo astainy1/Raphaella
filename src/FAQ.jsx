@@ -244,8 +244,13 @@ class FAQ extends React.Component {
               >
                 see more
               </button>
-            </div>
           </div>
+          </div>
+          <div className="bg-white flex flex-wrap justify-center pt-8">
+                <h2 className="font-sans font-bold text-sky-900 text-center text-4xl">
+                  Breaking Stigmas, Building Futures
+                </h2>
+            </div>
         </div>
       </>
     );

@@ -20,7 +20,7 @@ class Banner extends React.Component {
   render() {
     return (
       <>
-        <nav className="bg-black md:bg-white lg:bg-white md:dark:bg-black">
+        <nav className="bg-white md:bg-white lg:bg-white">
           <div className="max-w-screen-lg flex flex-wrap items-center justify-between mx-auto p-2">
             <Link to="/home" className="flex items-center space-x-3 rtl:space-x-reverse">
               <img src={image} className="h-auto m-3" alt="Raphaella Logo" />
@@ -35,7 +35,7 @@ class Banner extends React.Component {
               <button
                 data-collapse-toggle="navbar-menu"
                 type="button"
-                className="inline-flex items-center p-2 w-10 h-10 justify-center  text-sky-900 md:text-lg md:text-white md:hidden"
+                className="inline-flex items-center p-2 w-10 h-10 justify-center  text-sky-900 md:text-lg md:text-sky-900 md:hidden"
                 aria-controls="navbar-menu"
                 aria-expanded="false"
               >
@@ -52,24 +52,24 @@ class Banner extends React.Component {
               </button>
             </div>
             <div className="hidden transition-all duration-300 ease-in-out w-full md:flex md:w-auto md:order-1" id="navbar-menu">
-              <ul className="flex flex-col font-medium capitalize p-4 md:p-0 mt-4 border-none  md:bg-black lg:bg-black md:bg-white md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-black">
+              <ul className="flex flex-col font-medium capitalize p-4 md:p-0 mt-4 border-none bg-white md:bg-white  md:bg-white md:flex-row md:space-x-8 md:mt-0 md:border-0">
                 {/*<li>
                   <Link to="/home" className=" bg-sky-900 md:bg-black block md:py-2 md:px-2 md:text-white border-b-sky-900 md:border-none md:text-white md:hover:text-sky-900 hover:text-white text-white py-3 px-3">home</Link>
                 </li>*/}
                 <li>
-                  <Link to="/about" className="block lg:bg-black md:bg-white bg-sky-900 md:border-none md:py-2 md:px-2 md:text-white md:hover:text-sky-900 text-white px-3 py-3 md:hover:bg-black hover:bg-sky-900 hover:text-white">about</Link>
+                  <Link to="/about" className="block lg:bg-white lg:text-sky-900 md:bg-white bg-sky-900 md:border-none md:py-2 md:px-2 md:text-white md:hover:text-sky-900 text-white px-3 py-3 md:hover:bg-white hover:bg-sky-900 hover:text-white">about</Link>
                 </li>
                 <li>
-                  <Link to="/services" className="block lg:bg-black md:bg-white md:border-none md:py-2 md:px-2 md:text-white md:hover:text-sky-900 text-sky-900 px-3 py-3 hover:bg-sky-800 hover:text-white md:hover:bg-black">services</Link>
+                  <Link to="/services" className="block lg:text-sky-900 lg:bg-white md:bg-white md:border-none md:py-2 md:px-2 md:text-white md:hover:text-sky-900 text-sky-900 px-3 py-3 hover:bg-sky-800 hover:text-white md:hover:bg-white">services</Link>
                 </li>
                 <li>
-                  <Link to="/cores" className="block lg:bg-black md:bg-white md:border-none md:py-2 md:px-2 md:text-white md:hover:text-sky-900 text-sky-900 px-3 py-3 hover:bg-sky-800 hover:text-white md:hover:bg-black">core values</Link>
+                  <Link to="/cores" className="block lg:bg-white lg:text-sky-900 md:bg-white md:border-none md:py-2 md:px-2 md:text-white md:hover:text-sky-900 text-sky-900 px-3 py-3 hover:bg-sky-800 hover:text-white md:hover:bg-white">core values</Link>
                 </li>
                  <li>
-                  <Link to="/involve" className="block lg:bg-black md:bg-white md:border-none md:py-2 md:px-2 md:text-white md:hover:text-sky-900 text-sky-900 px-3 py-3 hover:bg-sky-800 hover:text-white md:hover:bg-black">get involve</Link>
+                  <Link to="/involve" className="block lg:bg-white lg:text-sky-900 md:bg-white md:border-none md:py-2 md:px-2 md:text-white md:hover:text-sky-900 text-sky-900 px-3 py-3 hover:bg-sky-800 hover:text-white md:hover:bg-white">get involve</Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="block md:border-none md:py-2 md:px-2 md:text-white md:hover:text-sky-900 text-sky-900 px-3 py-3 hover:bg-sky-800 hover:text-white md:hover:bg-black">contact</Link>
+                  <Link to="/contact" className="block lg:bg-white lg:text-sky-900 md:border-none md:py-2 md:px-2 md:text-white md:hover:text-sky-900 text-sky-900 px-3 py-3 hover:bg-sky-800 hover:text-white md:hover:bg-white">contact</Link>
                 </li>
               </ul>
             </div>

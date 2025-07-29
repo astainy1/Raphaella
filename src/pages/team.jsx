@@ -26,7 +26,7 @@ class TeamMembers extends React.Component{
     				</a>
    			 <div class="p-5">
         		<a href="#">
-            <h5 class="mb-2 text-2xl font-bold  tracking-tight text-black dark:text-sky-900 font-sans capitalize">Jesayda Wright</h5>
+            <h5 class="mb-2 text-2xl font-bold  tracking-tight text-sky-900 dark:text-sky-900 font-sans capitalize">Jesayda Wright</h5>
         </a>
         
         <p class="mb-3 font-normal text-sky-900 dark:text-sky-900">Holds a BA in Business Management with Marketing. My journey into special needs advocacy began after my daughter was diagnosed with autism.Facing stigma and misinformation, especially within African communities, inspired me to speak out and educate others.</p>

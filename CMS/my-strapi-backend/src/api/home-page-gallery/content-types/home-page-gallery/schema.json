@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_page_galleries",
+  "info": {
+    "singularName": "home-page-gallery",
+    "pluralName": "home-page-galleries",
+    "displayName": "HomePageGallery"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "HomePageGallerySection": {
+      "type": "component",
+      "component": "home-page-gallery.home-page-gallery",
+      "repeatable": true,
+      "required": true
+    }
+  }
+}

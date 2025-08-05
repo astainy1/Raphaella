@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_home_page_gallery_home_page_galleries",
+  "info": {
+    "displayName": "HomePageGallery",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    }
+  },
+  "config": {}
+}

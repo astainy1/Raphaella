@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_page_services",
+  "info": {
+    "singularName": "home-page-service",
+    "pluralName": "home-page-services",
+    "displayName": "HomePageService"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "What we do",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true,
+      "maxLength": 2000
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    }
+  }
+}

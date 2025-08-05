@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "volunteer_forms",
+  "info": {
+    "singularName": "volunteer-form",
+    "pluralName": "volunteer-forms",
+    "displayName": "volunteerForm"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "phone": {
+      "type": "string",
+      "required": false,
+      "unique": false
+    },
+    "reason": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "message": {
+      "type": "text",
+      "required": true,
+      "unique": false
+    }
+  }
+}

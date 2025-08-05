@@ -1,124 +1,122 @@
-import React from 'react'
-import SubscriptionForm from './subscriptionForm'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
-import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
-import {faMobileAlt} from '@fortawesome/free-solid-svg-icons'
-import {faWhatsapp} from '@fortawesome/free-brands-svg-icons'
-import {faFacebook} from '@fortawesome/free-brands-svg-icons'
-import {faInstagram} from '@fortawesome/free-brands-svg-icons'
-import { faTiktok } from '@fortawesome/free-brands-svg-icons'
+import { useEffect, useState } from "react";
+import SubscriptionForm from "./subscriptionForm";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faMapMarkerAlt,
+  faEnvelope,
+  faMobileAlt,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faWhatsapp,
+  faFacebook,
+  faInstagram,
+  faTiktok,
+} from "@fortawesome/free-brands-svg-icons";
 
+const Footer = () => {
+  const baseURL = "http://localhost:1337";
 
-class Footer extends React.Component {
-  render() {
-    return (
-      <>
-        <div className="bg-sky-900  md:h-96 pb-14 flex flex-wrap justify-evenly gap-5">
-          {/* contact us */}
-          <div className="w-64  ml-2 md:w-52 mt-10 md:mt-9">
-            <h1 className="ml-2 md:ml-2 text-white font-bold font-sans text-2xl md:text-2xl capitalize">
-              resource
-            </h1>
+  const [info, setInfo] = useState(null);
 
-            <ul className="list-none text-white pt-3 font-sans font-normal capitalize">
-              <li className="p-2">
-                <a href="#">
-                  what is autism?
-                </a>
+  // Fetch contact info from CMS
+  useEffect(() => {
+    fetch(`${baseURL}/api/contact-infos`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (Array.isArray(data.data) && data.data.length > 0) {
+          setInfo(data.data[0]); // No need for .attributes if data is flattened
+        } else {
+          console.warn("No contact info found.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching contact info:", error);
+      });
+  }, []);
+
+  return (
+    <footer className="bg-sky-900 py-10 px-4 md:px-10 lg:px-20">
+      <div className="flex flex-col md:flex-row md:justify-between flex-wrap gap-8 text-white">
+        {/* Resources */}
+        <div className="md:w-1/3 lg:w-1/4">
+          <h1 className="text-2xl font-bold capitalize mb-4">Resource</h1>
+          <ul className="space-y-2 capitalize text-sm">
+            <li><a href="#">What is autism?</a></li>
+            <li><a href="#">Understanding your child</a></li>
+            <li><a href="#">It's okay to ask for help</a></li>
+            <li><a href="#">How can I help?</a></li>
+            <li><a href="#">How can I educate someone about autism?</a></li>
+          </ul>
+        </div>
+
+        {/* Contact Info */}
+        <div className="md:w-1/3 lg:w-1/4">
+          <h1 className="text-2xl font-bold capitalize mb-4">Contact Us</h1>
+          <ul className="space-y-4 text-sm">
+            {info?.address && (
+              <li>
+                <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
+                {info.address}
               </li>
-              <li className="p-2">
-                <a href="#">
-                  understanding your child
-                </a>
+            )}
+            {info?.email && (
+              <li>
+                <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+                <a href={`mailto:${info.email}`}>{info.email}</a>
               </li>
-              <li className="p-2">
-              <a href="#">
-                it's okay to ask for help
-              </a>
+            )}
+            {info?.phone && (
+              <li>
+                <FontAwesomeIcon icon={faMobileAlt} className="mr-2" />
+                <a href={`tel:${info.phone}`}>{info.phone}</a>
               </li>
-              <li className="p-2">
-              <a href="#">
-                how can i help?
-              </a>
-              </li>
-              <li className="p-2">
-              <a href="#">
-                how can i education someone about autism?
-              </a>
-              </li>
-              </ul>
+            )}
+          </ul>
+        </div>
+
+        {/* Follow Us + Subscription */}
+        <div className="md:w-1/3 lg:w-1/4">
+          <h1 className="text-2xl font-bold capitalize mb-4">Follow Us</h1>
+
+          <div className="mb-6">
+            <SubscriptionForm />
           </div>
-          <div className="w-52 mt-8 mr-5">
-          <h1 className=" ml-2 md:ml-2 text-white font-bold font-sans text-2xl md:text-2xl capitalize">
-              contact us
-            </h1>
-            <div className="flex flex-wrap justify-evenly gap-5">
-              <ul className="list-none text-white pt-3 font-sans font-normal text-sm">
-              <li className="p-2 capitalize">
-                <FontAwesomeIcon icon={faMapMarkerAlt} className="text-white mr-2" />
-                :<span className="uppercase text-sm"> p o box 28332</span> minneapolis 55428
-              </li>
-              <li className="p-2">
-                <FontAwesomeIcon icon={faEnvelope} className="text-white text-sm mr-2"/> : <a href="mailto:info@raphaellalewisfoundation.org">
-                      info@raphaellalewisfoundation.org
-                      </a>
 
-              </li>
-              <li className="p-2">
-                <FontAwesomeIcon icon={faMobileAlt} className="text-white mr-2"/>
-                :<a href="tel:+16124406495">+1 612-440-6495</a>
-
-              </li>
-            </ul>
+          {/* Social Media */}
+          <div className="flex space-x-6 [&_a]:hover:text-sky-200 [&_a]:hover:scale-[1.4]">
+            <a
+              href="https://www.facebook.com/share/1F7uYhVoHN/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faFacebook} className="text-2xl" />
+            </a>
+            <a
+              href="https://whatsapp.com/channel/0029VbBDbP82kNFlGTRLl81X"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faWhatsapp} className="text-2xl" />
+            </a>
+            <a
+              href="https://www.instagram.com/raphaellalewisfoundation?igsh=MWc4MjV6OTZxMDF2eg%3D%3D&utm_source=qr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faInstagram} className="text-2xl" />
+            </a>
+            <a
+              href="https://www.tiktok.com/@raphaellalewisfoundation"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faTiktok} className="text-2xl" />
+            </a>
           </div>
         </div>
-        
-          <div className="w-52 m-0 h-auto md:mt-8">
-            <h1 className="text-white font-bold font-sans text-2xl md:text-2xl capitalize">
-              follow us
-            </h1>
-            {/*subscription form*/}
-            <div className="pt-8 pb-8">
-                
-              <SubscriptionForm/>
-            </div>
-            {/* Facebook */}
-            <div className="flex flex-wrap justify-evenly gap-5">
-            <div>
-              <a href="https://www.facebook.com/share/1F7uYhVoHN/?mibextid=wwXIfr">
-                <FontAwesomeIcon icon={faFacebook} className="text-white text-3xl w-auto"/>
-              </a>
-            </div>
-            {/* WhatsAPP */}
-            <div>
-              <a href="https://whatsapp.com/channel/0029VbBDbP82kNFlGTRLl81X">
-                <FontAwesomeIcon icon={faWhatsapp} className="text-white w-auto text-3xl"/>
-              </a>
-              
-            </div>
-            {/* Instagram */}
-            <div>
-              
-              <a href="https://www.instagram.com/raphaellalewisfoundation?igsh=MWc4MjV6OTZxMDF2eg%3D%3D&utm_source=qr">
-                <FontAwesomeIcon icon={faInstagram} className="text-white w-auto text-3xl"/>
+      </div>
+    </footer>
+  );
+};
 
-              </a>
-
-            </div>
-            {/* Tiktok */}
-            <div>
-              <a href="www.tiktok.com/@raphaellalewisfoundation">
-                <FontAwesomeIcon icon={faTiktok} className="text-white w-auto text-3xl"/>
-              </a>
-            </div>
-            </div>
-          </div>
-         </div> 
-
-      </>
-    )
-  }
-}
-
-export default Footer
+export default Footer;

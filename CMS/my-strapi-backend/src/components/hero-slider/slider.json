@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_hero_slider_sliders",
+  "info": {
+    "displayName": "Slider",
+    "icon": "folder"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "required": false,
+      "unique": true
+    },
+    "subtitle": {
+      "type": "string",
+      "required": false,
+      "unique": true
+    }
+  },
+  "config": {}
+}

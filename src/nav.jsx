@@ -18,7 +18,9 @@ class NavBar extends React.Component {
 
       });
     });
-  render() {
+
+  render(){
+
     return (
        <div className="bg-black py-0 px-6 flex flex-wrap items-center justify-evenly">
           <img className="h-auto px-5 m-1 cursor-pointer" src={image} alt="Logo" />
@@ -47,6 +49,7 @@ class NavBar extends React.Component {
           </ul>
         </div>
     );
+  }
   }
 }
 

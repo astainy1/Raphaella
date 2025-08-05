@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_faq_accordion_faqs",
+  "info": {
+    "displayName": "FAQ",
+    "icon": "information"
+  },
+  "options": {},
+  "attributes": {
+    "SubjectTitle": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    }
+  },
+  "config": {}
+}

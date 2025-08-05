@@ -9,10 +9,24 @@
   background-image: url('./img/nillyj-4-2.gif');
 }
 
-.App {
+/* .App {
   display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
+} */
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}
+

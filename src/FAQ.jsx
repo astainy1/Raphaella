@@ -44,7 +44,8 @@ const FAQ = () => {
       setFaqData(faqs);
     } catch (err) {
       console.error("Failed to fetch FAQ data:", err);
-      setError("Failed to load FAQs. Please try again later.");
+      // setError("");
+      setError("Failed to load FAQs.");
     }
   };
 

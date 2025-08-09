@@ -1,7 +1,14 @@
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 
-const baseURL = "http://localhost:1337";
+// const baseURL = "http://localhost:1337";
+
+ let serverUrl;
+  if (import.meta.env.VITE_SERVER_URL) {
+    serverUrl = import.meta.env.VITE_SERVER_URL;
+  } else {
+    serverUrl = "http://localhost:1337";
+  }
 
 const Gallery = () => {
   const [selectedImg, setSelectedImg] = useState(null);
@@ -13,14 +20,14 @@ const Gallery = () => {
   const pauseTimeoutId = useRef(null);
 
   useEffect(() => {
-    fetch(`${baseURL}/api/home-page-galleries?populate=HomePageGallerySection.image`)
+    fetch(`${serverUrl}/api/home-page-galleries?populate=HomePageGallerySection.image`)
       .then((res) => res.json())
       .then((data) => {
         const gallerySection = data?.data?.[0]?.HomePageGallerySection || [];
         const extractedImages = gallerySection
           .map((item) => item?.image?.url)
           .filter(Boolean)
-          .map((url) => baseURL + url);
+          .map((url) => url);
         setGalleryImages(extractedImages);
       })
       .catch((err) => console.error("Failed to load gallery images", err));

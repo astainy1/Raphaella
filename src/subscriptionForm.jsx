@@ -8,12 +8,19 @@ function SubscriptionForm() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false); // New loading state
 
+  let serverUrl;
+  if (import.meta.env.VITE_SERVER_URL) {
+    serverUrl = import.meta.env.VITE_SERVER_URL;
+  } else {
+    serverUrl = "http://localhost:1337";
+  }
+
   const handleSubscribe = async (e) => {
     e.preventDefault();
     setLoading(true); // Start loading
 
     try {
-      const res = await fetch("http://localhost:1337/api/subscribers", {
+      const res = await fetch(`${serverUrl}/api/subscribers`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ data: { email } }),

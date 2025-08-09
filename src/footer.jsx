@@ -14,13 +14,20 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
-  const baseURL = "http://localhost:1337";
+  // const baseURL = "http://localhost:1337";
+
+  let serverUrl;
+  if (import.meta.env.VITE_SERVER_URL) {
+    serverUrl = import.meta.env.VITE_SERVER_URL;
+  } else {
+    serverUrl = "http://localhost:1337";
+  }
 
   const [info, setInfo] = useState(null);
 
   // Fetch contact info from CMS
   useEffect(() => {
-    fetch(`${baseURL}/api/contact-infos`)
+    fetch(`${serverUrl}/api/contact-infos`)
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data.data) && data.data.length > 0) {
@@ -32,7 +39,7 @@ const Footer = () => {
       .catch((error) => {
         console.error("Error fetching contact info:", error);
       });
-  }, []);
+  }, [serverUrl]);
 
   return (
     <footer className="bg-sky-900 py-10 px-4 md:px-10 lg:px-20">
@@ -41,11 +48,21 @@ const Footer = () => {
         <div className="md:w-1/3 lg:w-1/4">
           <h1 className="text-2xl font-bold capitalize mb-4">Resource</h1>
           <ul className="space-y-2 capitalize text-sm">
-            <li><a href="#">What is autism?</a></li>
-            <li><a href="#">Understanding your child</a></li>
-            <li><a href="#">It's okay to ask for help</a></li>
-            <li><a href="#">How can I help?</a></li>
-            <li><a href="#">How can I educate someone about autism?</a></li>
+            <li>
+              <a href="#">What is autism?</a>
+            </li>
+            <li>
+              <a href="#">Understanding your child</a>
+            </li>
+            <li>
+              <a href="#">It's okay to ask for help</a>
+            </li>
+            <li>
+              <a href="#">How can I help?</a>
+            </li>
+            <li>
+              <a href="#">How can I educate someone about autism?</a>
+            </li>
           </ul>
         </div>
 

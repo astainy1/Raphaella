@@ -13,18 +13,16 @@ import "swiper/css/pagination";
 function Banner() {
   //Server base url
 
-  // let serverUrl;
-  // if (import.meta.env.VITE_SERVER_URL) {
-  //   serverUrl = import.meta.env.VITE_SERVER_URL;
-  // } else {
-  //   serverUrl = "http://localhost:1337";
-  // }
+  let serverUrl;
+  if (import.meta.env.VITE_SERVER_URL) {
+    serverUrl = import.meta.env.VITE_SERVER_URL;
+  } else {
+    serverUrl = "http://localhost:1337";
+  }
 
   const [showModal, setShowModal] = useState(false);
   const [slides, setSlides] = useState([]);
   const [scrolled, setScrolled] = useState(false);
-
-  const path = "http://localhost:1337";
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -32,15 +30,15 @@ function Banner() {
 
   // Fetch hero slides from Strapi
   useEffect(() => {
-    const serverUrl = import.meta.env.VITE_SERVER_URL;
+    // const serverUrl = import.meta.env.VITE_SERVER_URL;
     fetch(`${serverUrl}/api/hero-sections?populate=slides.image`)
       .then((res) => res.json())
       .then((data) => {
         const slideData = data.data.flatMap((item) => item.slides || []);
         setSlides(slideData);
+        // console.log("Server response: ", slideData);
       });
-    console.log("Environment variable: ", serverUrl);
-  }, []);
+  }, [serverUrl]);
 
   // Scroll detection for shrinking effect
   useEffect(() => {
@@ -148,9 +146,10 @@ function Banner() {
                 <div
                   className="h-full w-full bg-cover bg-center relative"
                   style={{
-                    backgroundImage: `url(${path + slide.image?.url})`,
+                    backgroundImage: `url(${slide.image?.url})`,
                   }}
                 >
+                  {/* {console.log(slide.image?.url)} */}
                   <div className="h-full w-full bg-black/85 flex flex-col items-center justify-center text-white text-center px-4">
                     <h1 className="text-3xl md:text-5xl font-bold mb-4">
                       {slide.title}

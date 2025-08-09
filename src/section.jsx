@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import img from "./img/RLF-6-1.webp";
 
 const textVariant = {
   hidden: { opacity: 0, y: 50 },
@@ -58,16 +57,23 @@ const Section = () => {
   }, [inView, controls]);
 
   // Fetch data from CMS (Strapi)
+  let serverUrl;
+  if (import.meta.env.VITE_SERVER_URL) {
+    serverUrl = import.meta.env.VITE_SERVER_URL;
+  } else {
+    serverUrl = "http://localhost:1337";
+  }
 
   //Image
   useEffect(() => {
-    fetch("http://localhost:1337/api/home-page-abouts?populate=media")
+    fetch(`${serverUrl}/api/home-page-abouts?populate=media`)
       .then((res) => res.json())
       .then((data) => {
         setContentImage(data.data);
+        // console.log(data);
       });
-  }, []);
-  const baseUrl = "http://localhost:1337";
+  }, [serverUrl]);
+  // const baseUrl = "http://localhost:1337";
   // const imageUrl =
   //   baseUrl + contentImage?.data?.[0]?.attributes?.media?.data?.attributes?.url;
   // contentImage.map((image) => {
@@ -77,79 +83,81 @@ const Section = () => {
 
   // Content
   useEffect(() => {
-    fetch("http://localhost:1337/api/home-page-abouts")
+    fetch(`${serverUrl}/api/home-page-abouts`)
       .then((res) => res.json())
       .then((data) => {
         setContent(data);
       });
-  }, []);
+  }, [serverUrl]);
   // console.log(content);
 
-  if (!content)
+  if (!content) {
     return (
       <div className="text-center text-white py-10">Loading section...</div>
     );
-
-  return (
-    <motion.div
-      ref={ref}
-      variants={containerVariant}
-      initial="hidden"
-      animate={controls}
-      className="flex flex-col md:flex-row gap-8 justify-center align-middle bg-gradient-to-b from-sky-700 to-sky-900  px-8 py-20 mx-auto"
-    >
-      {/* Text content */}
+  } else {
+    return (
       <motion.div
-        data-aos="fade-up"
-        data-aos-delay="200"
-        variants={textVariant}
-        className="text-white md:w-1/2 md:mt-32"
+        ref={ref}
+        variants={containerVariant}
+        initial="hidden"
+        animate={controls}
+        className="flex flex-col md:flex-row gap-8 justify-center align-middle bg-gradient-to-b from-sky-700 to-sky-900  px-8 py-20 mx-auto"
       >
-        <h1 className="font-bold text-5xl capitalize mb-10 ml-5">
-          {content?.data?.[0]?.title || "Loading..."}
-        </h1>
-        <p className="font-bold text-xl mb-5 ml-5">
-          {content?.data?.[0]?.description.split(".")[0] + "." || ""}
-        </p>
-        <p
-          className="text-xl font-normal font-sans mb-5 ml-5 pt-8"
-          id="paragraph"
-        >
-          {content?.data?.[0]?.description.split(".").slice(1).join(".") || ""}
-        </p>
-        <div className="mt-20 md:mt-32">
-          <button
-            className="bg-white text-sky-900 uppercase text-md py-3 px-3 font-normal font-sans ml-5 cursor-pointer hover:underline hover:bg-gray-100 hover:rounded"
-            onClick={() =>
-              document.getElementById("paragraph").classList.toggle("hidden")
-            }
-          >
-            learn more
-          </button>
-        </div>
-      </motion.div>
-
-      {/* Image */}
-      {contentImage.map((item, index) => (
+        {/* Text content */}
         <motion.div
           data-aos="fade-up"
           data-aos-delay="200"
-          variants={imageVariant}
-          className="md:w-1/2 mt-32 md:mt-0 h-full mb-0 m-0"
-          key={index}
+          variants={textVariant}
+          className="text-white md:w-1/2 md:mt-32"
         >
-          {/* {console.log(item.media.url)} */}
-          <img
+          <h1 className="font-bold text-5xl capitalize mb-10 ml-5">
+            {content?.data?.[0]?.title || "Loading..."}
+          </h1>
+          <p className="font-bold text-xl mb-5 ml-5">
+            {content?.data?.[0]?.description.split(".")[0] + "." || ""}
+          </p>
+          <p
+            className="text-xl font-normal font-sans mb-5 ml-5 pt-8"
+            id="paragraph"
+          >
+            {content?.data?.[0]?.description.split(".").slice(1).join(".") ||
+              ""}
+          </p>
+          <div className="mt-20 md:mt-32">
+            <button
+              className="bg-white text-sky-900 uppercase text-md py-3 px-3 font-normal font-sans ml-5 cursor-pointer hover:underline hover:bg-gray-100 hover:rounded"
+              onClick={() =>
+                document.getElementById("paragraph").classList.toggle("hidden")
+              }
+            >
+              learn more
+            </button>
+          </div>
+        </motion.div>
+
+        {/* Image */}
+        {contentImage.map((item, index) => (
+          <motion.div
             data-aos="fade-up"
             data-aos-delay="200"
-            className="hover:brightness-105 cursor-pointer rounded-2xl"
-            src={baseUrl + item.media.url}
-            alt="Autism Awareness"
-          />
-        </motion.div>
-      ))}
-    </motion.div>
-  );
+            variants={imageVariant}
+            className="md:w-1/2 mt-32 md:mt-0 h-full mb-0 m-0"
+            key={index}
+          >
+            {/* {console.log(item.media.url)} */}
+            <img
+              data-aos="fade-up"
+              data-aos-delay="200"
+              className="hover:brightness-105 cursor-pointer rounded-2xl"
+              src={item.media.url}
+              alt="Autism Awareness"
+            />
+          </motion.div>
+        ))}
+      </motion.div>
+    );
+  }
 };
 
 export default Section;

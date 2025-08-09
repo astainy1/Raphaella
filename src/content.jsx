@@ -4,10 +4,20 @@ import FAQ from "./FAQ";
 
 function Content() {
   const [content, setContent] = useState([]);
-  const baseUrl = "http://localhost:1337"; // Change this in production
+  // const baseUrl = "http://localhost:1337"; // Change this in production
+
+  //Server URL
+  let serverUrl;
+  if (import.meta.env.VITE_SERVER_URL) {
+    serverUrl = import.meta.env.VITE_SERVER_URL;
+  } else {
+    serverUrl = "http://localhost:1337";
+  }
+
+  // console.log(serverUrl);
 
   useEffect(() => {
-    fetch(`${baseUrl}/api/home-page-services?populate=*`)
+    fetch(`${serverUrl}/api/home-page-services?populate=*`)
       .then((res) => res.json())
       .then((data) => {
         setContent(data.data); // this is already an array
@@ -15,7 +25,7 @@ function Content() {
       .catch((err) => {
         console.error("Error fetching content:", err);
       });
-  }, []);
+  }, [serverUrl]);
 
   return (
     <>
@@ -30,9 +40,8 @@ function Content() {
         {content.length > 0 &&
           content.map((item) => {
             // const { id, attributes } = item;
-            const {id, title, description, media } = item;
-            const imageUrl =
-              baseUrl + (media?.url || "");
+            const { id, title, description, media } = item;
+            const imageUrl = media?.url || "";
             // {console.log(media?.url)}
             return (
               <React.Fragment key={id}>
@@ -46,7 +55,10 @@ function Content() {
                   <p data-aos="fade-up" className="text-gray-800 text-lg">
                     {description}
                   </p>
-                  <div data-aos="fade-down" className="mt-12 flex justify-center">
+                  <div
+                    data-aos="fade-down"
+                    className="mt-12 flex justify-center"
+                  >
                     <Link
                       to="/services"
                       className="uppercase bg-sky-800 text-white py-3 px-8 cursor-pointer hover:underline hover:bg-sky-900 hover:rounded"

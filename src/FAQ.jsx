@@ -7,7 +7,6 @@ function TruncateText({ children, maxLines = 6 }) {
   const [expanded, setExpanded] = useState(false);
 
   const shouldTruncate = children?.toString().split(" ").length > 80;
-
   return (
     <div className="relative">
       <div
@@ -36,22 +35,30 @@ const FAQ = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
   const [error, setError] = useState(null);
 
-  const fetchFaqData = async () => {
+  let serverUrl;
+  if (import.meta.env.VITE_SERVER_URL) {
+    serverUrl = import.meta.env.VITE_SERVER_URL;
+  } else {
+    serverUrl = "http://localhost:1337";
+  }
+   
+  useEffect(() => {
+    // fetchFaqData();
+
     try {
-      const response = await fetch("http://localhost:1337/api/faqs?populate=*");
-      const data = await response.json();
-      const faqs = data?.data || [];
-      setFaqData(faqs);
+      fetch(`${serverUrl}/api/faqs?populate=*`)
+      .then((response) => response.json())
+      .then((data) => {
+
+        const faqs = data?.data || [];
+        setFaqData(faqs);
+      })
     } catch (err) {
       console.error("Failed to fetch FAQ data:", err);
       // setError("");
       setError("Failed to load FAQs.");
     }
-  };
-
-  useEffect(() => {
-    fetchFaqData();
-  }, []);
+  }, [serverUrl]);
 
   const toggleExpand = (index) => {
     setExpandedIndex(index === expandedIndex ? null : index);

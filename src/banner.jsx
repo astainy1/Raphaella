@@ -12,14 +12,13 @@ import "swiper/css/pagination";
 
 function Banner() {
   //Server base url
-  let serverUrl;
-  if (import.meta.env.VITE_SERVER_URL) {
-    serverUrl = import.meta.env.VITE_SERVER_URL;
-  } else {
-    serverUrl = "http://localhost:1337";
-  }
 
-  // console.log("Environment variable: ", serverUrl);
+  // let serverUrl;
+  // if (import.meta.env.VITE_SERVER_URL) {
+  //   serverUrl = import.meta.env.VITE_SERVER_URL;
+  // } else {
+  //   serverUrl = "http://localhost:1337";
+  // }
 
   const [showModal, setShowModal] = useState(false);
   const [slides, setSlides] = useState([]);
@@ -33,12 +32,14 @@ function Banner() {
 
   // Fetch hero slides from Strapi
   useEffect(() => {
+    const serverUrl = import.meta.env.VITE_SERVER_URL;
     fetch(`${serverUrl}/api/hero-sections?populate=slides.image`)
       .then((res) => res.json())
       .then((data) => {
         const slideData = data.data.flatMap((item) => item.slides || []);
         setSlides(slideData);
       });
+    console.log("Environment variable: ", serverUrl);
   }, []);
 
   // Scroll detection for shrinking effect

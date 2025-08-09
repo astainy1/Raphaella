@@ -11,6 +11,16 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 function Banner() {
+  //Server base url
+  let serverUrl;
+  if (import.meta.env.VITE_SERVER_URL) {
+    serverUrl = import.meta.env.VITE_SERVER_URL;
+  } else {
+    serverUrl = "http://localhost:1337";
+  }
+
+  // console.log("Environment variable: ", serverUrl);
+
   const [showModal, setShowModal] = useState(false);
   const [slides, setSlides] = useState([]);
   const [scrolled, setScrolled] = useState(false);
@@ -23,7 +33,7 @@ function Banner() {
 
   // Fetch hero slides from Strapi
   useEffect(() => {
-    fetch("http://localhost:1337/api/hero-sections?populate=slides.image")
+    fetch(`${serverUrl}/api/hero-sections?populate=slides.image`)
       .then((res) => res.json())
       .then((data) => {
         const slideData = data.data.flatMap((item) => item.slides || []);

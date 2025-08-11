@@ -7,14 +7,15 @@ import {
   Navigate,
   useLocation,
 } from "react-router-dom";
-import {DotLoader} from "react-spinners/DotLoader";
-import {BounceLoader} from "react-spinners"
+import { DotLoader } from "react-spinners/DotLoader";
+import { BounceLoader } from "react-spinners";
 
 import Banner from "./banner";
 import Section from "./section";
 import Content from "./content";
 import SectionContent from "./content-section";
 import Gallery from "./gallery";
+import Support from "./components/Support";
 import Footer from "./footer";
 import CopyRight from "./copyright";
 
@@ -46,7 +47,6 @@ function Loader({ fadeOut }) {
     </div>
   );
 }
-
 
 function Layout() {
   const location = useLocation(); // to detect route change
@@ -92,10 +92,10 @@ function Home() {
       <Content />
       <SectionContent />
       <Gallery />
+      {/* <Support /> */}
     </>
   );
 }
-
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

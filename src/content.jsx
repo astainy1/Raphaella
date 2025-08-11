@@ -86,12 +86,7 @@ function Content() {
           })}
       </div>
 
-      <div className="h-auto mb-24">
-        <h1 className="text-sky-900 uppercase font-bold text-4xl m-8 md:ml-14 md:m-14">
-          faq
-        </h1>
-        <FAQ />
-      </div>
+      <FAQ />
     </>
   );
 }

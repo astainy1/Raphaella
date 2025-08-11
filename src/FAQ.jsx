@@ -41,18 +41,17 @@ const FAQ = () => {
   } else {
     serverUrl = "http://localhost:1337";
   }
-   
+
   useEffect(() => {
     // fetchFaqData();
 
     try {
       fetch(`${serverUrl}/api/faqs?populate=*`)
-      .then((response) => response.json())
-      .then((data) => {
-
-        const faqs = data?.data || [];
-        setFaqData(faqs);
-      })
+        .then((response) => response.json())
+        .then((data) => {
+          const faqs = data?.data || [];
+          setFaqData(faqs);
+        });
     } catch (err) {
       console.error("Failed to fetch FAQ data:", err);
       // setError("");
@@ -72,46 +71,60 @@ const FAQ = () => {
     );
   };
 
+  if(!faqData || faqData.length === 0){
+    return(
+      <></>
+    );
+  }
+
   return (
-    <div className="mx-15 max-w px-4 py-8">
-      {error && <p className="text-red-500 text-center">{error}</p>}
+    <>
+      <div className="h-auto mb-24">
+        <h1 className="text-sky-900 font-bold text-4xl m-8 md:ml-14 md:m-14">
+          FAQ
+        </h1>
 
-      {!error && faqData.length === 0 && (
-        <p className="text-center text-sky-700">Loading FAQs...</p>
-      )}
+        <div className="mx-15 max-w px-4 py-8">
+          {error && <p className="text-red-500 text-center">{error}</p>}
 
-      {faqData.map((faqGroup, groupIndex) =>
-        faqGroup?.FAQ?.map((faqItem, itemIndex) => {
-          const subjectTitle = faqItem.SubjectTitle || "No Title";
-          const description = faqItem.description || "";
-          const globalIndex = `${groupIndex}-${itemIndex}`;
-          const isExpanded = expandedIndex === globalIndex;
+          {!error && faqData.length === 0 && (
+            <p className="text-center text-sky-700">Loading FAQs...</p>
+          )}
 
-          return (
-            <div
-              key={faqItem.id}
-              className="border-b border-gray-300 pb-4 mb-4 overflow-hidden transition-all duration-500 ease-in-out"
-            >
-              <button
-                onClick={() => toggleExpand(globalIndex)}
-                className="flex items-center justify-between w-full text-left font-semibold text-sky-800 text-xl hover:text-sky-600 focus:outline-none cursor-pointer"
-              >
-                {subjectTitle}
-                {isExpanded ? <ChevronUp /> : <ChevronDown />}
-              </button>
+          {faqData.map((faqGroup, groupIndex) =>
+            faqGroup?.FAQ?.map((faqItem, itemIndex) => {
+              const subjectTitle = faqItem.SubjectTitle || "No Title";
+              const description = faqItem.description || "";
+              const globalIndex = `${groupIndex}-${itemIndex}`;
+              const isExpanded = expandedIndex === globalIndex;
 
-              <div
-                className={`transition-all duration-500 ease-in-out ${
-                  isExpanded ? "opacity-100 mt-3" : "opacity-0 h-0"
-                }`}
-              >
-                {isExpanded && renderAnswer(description)}
-              </div>
-            </div>
-          );
-        })
-      )}
-    </div>
+              return (
+                <div
+                  key={faqItem.id}
+                  className="border-b border-gray-300 pb-4 mb-4 overflow-hidden transition-all duration-500 ease-in-out"
+                >
+                  <button
+                    onClick={() => toggleExpand(globalIndex)}
+                    className="flex items-center justify-between w-full text-left font-semibold text-sky-800 text-xl hover:text-sky-600 focus:outline-none cursor-pointer"
+                  >
+                    {subjectTitle}
+                    {isExpanded ? <ChevronUp /> : <ChevronDown />}
+                  </button>
+
+                  <div
+                    className={`transition-all duration-500 ease-in-out ${
+                      isExpanded ? "opacity-100 mt-3" : "opacity-0 h-0"
+                    }`}
+                  >
+                    {isExpanded && renderAnswer(description)}
+                  </div>
+                </div>
+              );
+            })
+          )}
+        </div>
+      </div>
+    </>
   );
 };
 

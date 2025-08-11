@@ -1,14 +1,16 @@
-import React from 'react';
-import Banner from '../banner';
-import Section from '../section';
-import Content from '../content'; // ✅ corrected the import name
-import SectionContent from '../content-section';
-import Gallery from '../gallery';
-import Footer from '../footer';
-import CopyRight from '../copyright';
+import React from "react";
+import Banner from "../banner";
+import Section from "../section";
+import Content from "../content"; // ✅ corrected the import name
+import SectionContent from "../content-section";
+import Gallery from "../gallery";
+import Support from "./components/Support";
+import Footer from "../footer";
+import CopyRight from "../copyright";
 
-class Home extends React.Component {
-  render() {
+
+const Home = () => {
+ 
     return (
       <>
         <Banner />
@@ -16,6 +18,7 @@ class Home extends React.Component {
         <Content />
         <SectionContent />
         <Gallery />
+        <Support />
         <Footer />
         <CopyRight />
       </>
